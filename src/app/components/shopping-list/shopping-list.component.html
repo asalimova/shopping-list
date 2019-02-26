@@ -1,0 +1,21 @@
+
+<div class="main">
+<div class="entry">
+   <form (submit)="$event.preventDefault(); create(title.value); title.value=''">
+
+     <input #title type="text" placeholder="title" required >
+     <!-- <button (click)="create(title.value); title.value=''">Добавить</button> -->
+     <input type="submit" value="title" >
+    </form>
+</div>
+<div class="listing">
+<ul>
+  <li *ngFor="let shopping of shoppingList">
+    {{shopping.title}} - {{shopping.amount}}
+
+    <button (click)="decrease(shopping.id)"><span style="color:red; font-weight:bold"> -</span> </button>
+    <button (click)="increase(shopping.id)"><span style="color:green; font-weight: bold"> + </span></button>
+  </li>
+</ul>
+</div>
+</div>
